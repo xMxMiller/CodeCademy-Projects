@@ -1,1 +1,1 @@
-My solutions to codecademy projects within their sylybus.
+My solutions to codecademy projects within their syllabus.
