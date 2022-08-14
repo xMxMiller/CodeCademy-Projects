@@ -4,7 +4,7 @@
 
 int main() {
 
-  std::string input = "hi, humanu";
+  std::string input = "hi, human";
 
   std::vector<char> vowels = {'a','e','i','o','u'};
 
