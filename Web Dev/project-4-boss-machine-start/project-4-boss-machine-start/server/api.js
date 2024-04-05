@@ -40,7 +40,7 @@ apiRouter.get('/api/minions/:minionid', (req, res, next) => {
 
 //Add new minion
 apiRouter.post('/api/minions', (req, res, next) => {
-    let minion = MinionDB.addToDatabase('minions', req.query);
+    let minion = MinionDB.addToDatabase('minions', req.body);
     if (minion) {
          res.status(201).send(minion);
     } else {
