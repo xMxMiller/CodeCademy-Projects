@@ -46,7 +46,6 @@ apiRouter.post('/api/minions', (req, res, next) => {
     } else {
         res.sendStatus(400);
     }
-    res.sendStatus(404);
 });
 
 
