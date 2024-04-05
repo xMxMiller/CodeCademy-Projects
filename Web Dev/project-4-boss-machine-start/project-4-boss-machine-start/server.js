@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 
 module.exports = app;
@@ -9,7 +10,7 @@ module.exports = app;
 const PORT = process.env.PORT || 4001;
 
 // Add middleware for handling CORS requests from index.html
-
+app.use(cors());
 
 // Add middware for parsing request bodies here:
 
