@@ -18,8 +18,8 @@ const minionSchemaCheck = (req, res, next) => {
 
 //Minion Routes
 //Verifiong minion id
-apiRouter.use('/api/minions/:minionid', (req, res, next) => {
-    const minionId = req.params.minionid;
+apiRouter.use('/api/minions/:minionId', (req, res, next) => {
+    const minionId = req.params.minionId;
     const minion = MinionDB.getFromDatabaseById('minions', minionId);
     if (!minion) {
         return res.status(404).send('Minion not found');
@@ -35,7 +35,7 @@ apiRouter.get('/api/minions', (req, res, next) => {
 
 //Get single minion
 apiRouter.get('/api/minions/:minionid', (req, res, next) => {
-    res.status(202).send(req.minion);
+    res.send(req.minion);
 });
 
 //Add new minion
