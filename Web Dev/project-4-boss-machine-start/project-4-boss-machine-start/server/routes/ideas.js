@@ -4,7 +4,7 @@ const database = require('../db');
 
 module.exports = ideaRouter;
 
-//Verifiong idea id
+//Verifing idea id
 ideaRouter.use('/:ideaId', (req, res, next) => {
     const ideaId = req.params.ideaId;
     const idea = database.getFromDatabaseById('ideas', ideaId);
