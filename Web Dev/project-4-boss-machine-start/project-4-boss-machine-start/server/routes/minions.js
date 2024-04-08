@@ -1,11 +1,9 @@
 const express = require('express');
 const minionRouter = express.Router();
 const database = require('../db');
+const workRoutes = require('./work')
 
-module.exports = minionRouter;
-
-//Verifiong minion id
-minionRouter.use('/:minionId', (req, res, next) => {
+const verifMinion = (req, res, next) => {
     const minionId = req.params.minionId;
     const minion = database.getFromDatabaseById('minions', minionId);
     if (!minion) {
@@ -13,7 +11,15 @@ minionRouter.use('/:minionId', (req, res, next) => {
     }
     req.minion = minion;
     next();
-});
+};
+
+module.exports = minionRouter;
+
+//Verifing minion id
+minionRouter.use('/:minionId', verifMinion);
+
+//Use for work
+minionRouter.use('/:minionId/work', verifMinion, workRoutes);
 
 //GET all minions
 minionRouter.get('/', (req, res, next) => {
